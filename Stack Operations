@@ -1,0 +1,53 @@
+//Stack Operations
+import java.util.Scanner;
+import java.util.Stack;
+public class StackOperations {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        Stack<Integer>stack=new Stack<>();
+        while(true){
+            System.out.println("\n1.push \n2.pop \n3.peek \n4.empty \n5.Display \n6.exit");
+            int choice=scan.nextInt();
+            switch(choice){
+                case 1:
+                    //push: Inserts the element into stack
+                    System.out.println("enter element to push:");
+                    int ele=scan.nextInt();
+                    stack.push(ele);
+                    System.out.println("Element pushed succesfully");
+                    break;
+                case 2:
+                    //Pop:remove the element from stack
+                    if(!stack.isEmpty()){
+                        int removed=stack.pop();
+                        System.out.println("popped:"+removed);
+                        System.out.println("removed succesfully");
+                    }else{
+                        System.out.println("stack is empty");
+                        }
+                        break;
+                case 3:
+                    //Peek:shows the top element
+                    if(!stack.isEmpty()){
+                        System.out.println("top element:"+stack.peek());
+                    }else{
+                        System.out.println("empty stack");
+                        }break;
+                case 4:
+                    //Checks whether the stack is empty or not
+                    if(!stack.isEmpty()){
+                        System.out.println("Stack is empty");
+                    }break;
+                case 5:
+                    //Display the elements present in the stack
+                    System.out.println("Stack elements are:"+stack);
+                case 6:
+                    //exit
+                    System.out.println("exiting...");
+                    scan.close();
+                default:
+                    System.out.println("invalid input");
+            }
+        }
+    }
+}
