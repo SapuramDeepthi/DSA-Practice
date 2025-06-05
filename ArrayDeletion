@@ -1,0 +1,40 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+public class ArrayInsertions {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter size of an array:");
+        int size=scan.nextInt();
+        int[]arr=new int[size+10];
+        System.out.print("Enter elements:");
+        for(int i=0;i<size;i++){
+            arr[i]=scan.nextInt();
+        }
+        System.out.println("\nchoose the option:");
+        System.out.println("\n1.Insertion at beginning \n2.Insertion at middle \n3.Insertion at end:");
+        int choice=scan.nextInt();
+        int index=0;
+        if(choice==1){
+            index=0;
+        }else if(choice==2){
+            System.out.println("enter index:");
+            index = scan.nextInt();
+            if(index<0||index>size){
+                System.out.println("invalid index");
+        }
+        }
+        else if(choice==3){
+            index=size-1;
+        }else{
+            System.out.println("invalid choice");
+        }for(int i=index;i<size-1;i++){
+            arr[i]=arr[i+1];
+        }
+        size--;
+        System.out.println("Array elements after Deletion:");
+        for(int i=0;i<size;i++){
+            System.out.println(arr[i]+" ");
+        }
+    }
+}
